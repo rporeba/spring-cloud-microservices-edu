@@ -7,6 +7,7 @@ import pl.altkom.asc.rporeba.edu.service.book.model.Book;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class BookRepository {
@@ -24,6 +25,10 @@ public class BookRepository {
     public List<Book> findAll() {
         return repository().books;
     }
+
+//    public List<Book> findByBorrowId(Long borrowId) {
+//        return repository().books.stream().filter(a -> a.getDepartmentId().equals(borrowId)).collect(Collectors.toList());
+//    }
 
     public Book add(Book book) {
         book.setId((long) (books.size()+1));

@@ -34,4 +34,10 @@ public class BookController {
         LOGGER.info("Books find");
         return bookRepository.findAll();
     }
+
+//    @GetMapping("/borrow/{borrowId}")
+//    public List findByBorrow(@PathVariable("borrowId") Long borrowId) {
+//        LOGGER.info("Employee find: borrowId={}", borrowId);
+//        return bookRepository.findByborrowId(borrowId);
+//    }
 }
