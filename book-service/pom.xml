@@ -98,11 +98,11 @@
             <artifactId>recommendation-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-		<dependency>
-			<groupId>pl.altkom.asc.rporeba.edu</groupId>
-			<artifactId>renting-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>pl.altkom.asc.rporeba.edu</groupId>-->
+			<!--<artifactId>renting-service</artifactId>-->
+			<!--<version>0.0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 	<dependencyManagement>

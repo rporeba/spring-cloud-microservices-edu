@@ -1,0 +1,44 @@
+server:
+  port: 8093
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8092/eureka/
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+
+      - id: book-service
+        uri: lb://book-service
+        predicates:
+        - Path=/book/**
+        filters:
+        - RewritePath=/book/(?<path>.*), /$\{path}
+
+      - id: recommendation-service
+        uri: lb://recommendation-service
+        predicates:
+        - Path=/recommendation/**
+        filters:
+        - RewritePath=/recommendation/(?<path>.*), /$\{path}
+
+      - id: renting-service
+        uri: lb://renting-service
+        predicates:
+        - Path=/renting/**
+        filters:
+        - RewritePath=/renting/(?<path>.*), /$\{path}

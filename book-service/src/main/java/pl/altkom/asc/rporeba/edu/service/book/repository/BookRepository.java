@@ -1,13 +1,14 @@
 package pl.altkom.asc.rporeba.edu.service.book.repository;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import pl.altkom.asc.rporeba.edu.service.book.model.Book;
+import pl.altkom.asc.rporeba.edu.service.recommendation.model.Recommendation;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 public class BookRepository {
@@ -39,9 +40,9 @@ public class BookRepository {
     @Bean
     BookRepository repository() {
         BookRepository repository = new BookRepository();
-        repository.add(new Book(1L, "9788328308497", "Spring w Akcji", 450L ));
-        repository.add(new Book(2L, "6255322423423", "Java 8", 300L ));
-        repository.add(new Book(3L, "9085673458745", "Czysty Kod", 380L ));
+        repository.add(new Book(1L, "9788328308497", "Spring w Akcji", 450L, Sets.newHashSet(new Recommendation(1L, 5,"Bardzo Ciekawa Książka" ))));
+        repository.add(new Book(2L, "6255322423423", "Java 8", 300L, Sets.newHashSet()));
+        repository.add(new Book(3L, "9085673458745", "Czysty Kod", 380L ,Sets.newHashSet()));
         return repository;
     }
 }

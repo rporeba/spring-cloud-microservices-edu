@@ -23,11 +23,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long id, String isbn, String bookTitle, Long numberOfPage) {
+    public Book(Long id, String isbn, String bookTitle, Long numberOfPage, Set<Recommendation> recommendations) {
         this.id = id;
         this.isbn = isbn;
         this.bookTitle = bookTitle;
         this.numberOfPage = numberOfPage;
+        this.recommendations = recommendations;
     }
 
     public Long getId() {
