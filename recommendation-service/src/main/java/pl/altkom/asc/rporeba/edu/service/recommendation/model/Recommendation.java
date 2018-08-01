@@ -1,45 +1,26 @@
 package pl.altkom.asc.rporeba.edu.service.recommendation.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * @author rporeba
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Recommendation {
 
     private Long id;
     private int stars;
     private String description;
+    private Long bookId;
 
-    public Recommendation() {
-    }
-
-    public Recommendation(Long id, int stars, String description) {
+    public Recommendation(Long id, int stars, String description, Long bookId) {
         this.id = id;
         this.stars = stars;
         this.description = description;
+        this.bookId = bookId;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getStars() {
-        return stars;
-    }
-
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
 }

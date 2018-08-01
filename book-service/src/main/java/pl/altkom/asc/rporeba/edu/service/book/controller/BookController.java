@@ -47,18 +47,4 @@ public class BookController {
     }
 
 
-
-
-
-
-
-
-
-
-
-//    @GetMapping("/borrow/{borrowId}")
-//    public List findByBorrow(@PathVariable("borrowId") Long borrowId) {
-//        LOGGER.info("Employee find: borrowId={}", borrowId);
-//        return bookRepository.findByborrowId(borrowId);
-//    }
 }

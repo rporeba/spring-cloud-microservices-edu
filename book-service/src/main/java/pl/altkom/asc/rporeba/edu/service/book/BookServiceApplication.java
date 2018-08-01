@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import pl.altkom.asc.rporeba.edu.service.book.model.Book;
-import pl.altkom.asc.rporeba.edu.service.book.repository.BookRepository;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -33,13 +31,4 @@ public class BookServiceApplication {
 				.build()
 				.apiInfo(new ApiInfoBuilder().version("1.0").title("Employee API").description("Documentation Book API v1.0").build());
 	}
-
-//	@Bean
-//	BookRepository repository() {
-//		BookRepository repository = new BookRepository();
-//		repository.add(new Book(1L, "9788328308497", "Spring w Akcji", 450L ));
-//		repository.add(new Book(1L, "6255322423423", "Java 8", 300L ));
-//		repository.add(new Book(1L, "9085673458745", "Czysty Kod", 380L ));
-//		return repository;
-//	}
 }
