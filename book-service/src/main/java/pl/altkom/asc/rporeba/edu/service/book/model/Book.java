@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.altkom.asc.rporeba.edu.service.recommendation.model.Recommendation;
+
+import java.util.Set;
 
 //@Getter
 //@Setter
@@ -15,6 +18,7 @@ public class Book {
     private String isbn;
     private String bookTitle;
     private Long numberOfPage;
+    private Set<Recommendation> recommendations;
 
     public Book() {
     }
@@ -56,5 +60,13 @@ public class Book {
 
     public void setNumberOfPage(Long numberOfPage) {
         this.numberOfPage = numberOfPage;
+    }
+
+    public Set<Recommendation> getRecommendations() {
+        return recommendations;
+    }
+
+    public void setRecommendations(Set<Recommendation> recommendations) {
+        this.recommendations = recommendations;
     }
 }
