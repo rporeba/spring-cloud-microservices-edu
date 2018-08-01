@@ -42,7 +42,7 @@ public class BookController {
     public Book findBookByIdWithRecommendation(@PathVariable("id") Long id) {
         LOGGER.info("Book find: id={}", id);
         Book book = bookRepository.findById(id);
-        book.setRecommendations(recommendationClient.findRecommendationByBookId(id));
+        book.setRecommendations(recommendationClient.findRecommendationByBookId(book.getId()));
         return book;
     }
 
