@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import pl.altkom.asc.rporeba.edu.service.book.client.RecommendationClient;
-import pl.altkom.asc.rporeba.edu.service.book.client.RentingClient;
 import pl.altkom.asc.rporeba.edu.service.book.model.Book;
 import pl.altkom.asc.rporeba.edu.service.book.repository.BookRepository;
 
@@ -19,13 +18,11 @@ public class BookController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     private final BookRepository bookRepository;
-    private final RentingClient rentingClient;
     private final RecommendationClient recommendationClient;
 
     @Autowired
-    public BookController(BookRepository bookRepository, RentingClient rentingClient, RecommendationClient recommendationClient) {
+    public BookController(BookRepository bookRepository, RecommendationClient recommendationClient) {
         this.bookRepository = bookRepository;
-        this.rentingClient = rentingClient;
         this.recommendationClient = recommendationClient;
     }
 
