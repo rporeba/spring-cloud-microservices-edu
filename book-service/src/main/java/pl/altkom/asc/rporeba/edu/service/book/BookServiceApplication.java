@@ -37,9 +37,9 @@ public class BookServiceApplication {
 	@Bean
 	BookRepository repository() {
 		BookRepository repository = new BookRepository();
-		repository.add(new Book(1L, "9788328308497", "Spring w Akcji", 450L));
-		repository.add(new Book(2L, "6255322423423", "Java 8", 300L));
-		repository.add(new Book(3L, "9085673458745", "Czysty Kod", 380L ));
+		repository.addBook(new Book(1L, "9788328308497", "Spring w Akcji", 450L));
+		repository.addBook(new Book(2L, "6255322423423", "Java 8", 300L));
+		repository.addBook(new Book(3L, "9085673458745", "Czysty Kod", 380L ));
 		return repository;
 	}
 }
