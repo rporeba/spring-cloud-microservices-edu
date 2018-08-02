@@ -3,9 +3,7 @@ package pl.altkom.asc.rporeba.edu.service.book.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.altkom.asc.rporeba.edu.service.book.client.RecommendationClient;
 import pl.altkom.asc.rporeba.edu.service.book.client.RentingClient;
 import pl.altkom.asc.rporeba.edu.service.book.model.Book;
@@ -63,6 +61,20 @@ public class BookController {
         Book book = bookRepository.findById(id);
         book.setRentings(rentingClient.findRentingWithRecommendationByBookId(book.getId()));
         return book;
+    }
+
+
+    @PostMapping("/addBook")
+    public Book addBook(@RequestBody Book book) {
+        LOGGER.info("Book add: {}", book);
+        return bookRepository.add(book);
+    }
+
+    @DeleteMapping("/deleteBook/{bookId}")
+    public Book addBook(@PathVariable("bookId") Long bookId) {
+        LOGGER.info("Book deleted with id: {}", bookId);
+        Book book = bookRepository.findById(bookId);
+        return bookRepository.deleteBook(book);
     }
 
 
