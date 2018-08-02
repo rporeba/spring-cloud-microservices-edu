@@ -29,6 +29,6 @@ public class BookServiceApplication {
 				.apis(RequestHandlerSelectors.basePackage("pl.altkom.asc.rporeba.edu.service.book.controller"))
 				.paths(PathSelectors.any())
 				.build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Employee API").description("Documentation Book API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("Book API").description("Documentation Book API v1.0").build());
 	}
 }

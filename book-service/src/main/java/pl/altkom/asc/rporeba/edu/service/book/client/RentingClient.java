@@ -13,7 +13,7 @@ public interface RentingClient {
     @GetMapping("/book/{bookId}")
     public List<Renting> findRentingByBookId(@PathVariable("bookId") Long bookId);
 
-//    @GetMapping("/book/{bookId}/with-recommendation")
-//    public List<Renting> findByRecommendationWithRecommendation(@PathVariable("bookId") Long bookId);
+    @GetMapping("/book/{bookId}/with-recommendation")
+    public List<Renting> findRentingWithRecommendationByBookId(@PathVariable("bookId") Long bookId);
 
 }

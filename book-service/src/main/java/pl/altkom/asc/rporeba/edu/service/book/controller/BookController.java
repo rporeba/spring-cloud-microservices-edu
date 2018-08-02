@@ -57,5 +57,13 @@ public class BookController {
         return book;
     }
 
+    @GetMapping("/{id}/with-renting-and-recommendation")
+    public Book findBookByIdWithRentingAndRecommendation(@PathVariable("id") Long id) {
+        LOGGER.info("Book find: id={}", id);
+        Book book = bookRepository.findById(id);
+        book.setRentings(rentingClient.findRentingWithRecommendationByBookId(book.getId()));
+        return book;
+    }
+
 
 }

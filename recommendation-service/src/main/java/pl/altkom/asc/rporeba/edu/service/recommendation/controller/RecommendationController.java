@@ -32,4 +32,10 @@ public class RecommendationController {
         return recommendationRepository.findByBook(bookId);
     }
 
+    @GetMapping("/renting/{rentingId}")
+    public List<Recommendation> findByRenting(@PathVariable("rentingId") Long rentingId) {
+        LOGGER.info("Recommendation find: rentingId={}", rentingId);
+        return recommendationRepository.findByRenting(rentingId);
+    }
+
 }

@@ -28,8 +28,8 @@ public class RentingRepository {
             return null;
     }
 
-    public List<Rent> findByRenting(Long rentingId) {
-        return repository().rents.stream().filter(a -> a.getBookId().equals(rentingId))
+    public List<Rent> findByBook(Long bookId) {
+        return repository().rents.stream().filter(a -> a.getBookId().equals(bookId))
                 .collect(Collectors.toList());
     }
 

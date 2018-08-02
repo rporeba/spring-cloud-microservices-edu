@@ -33,6 +33,11 @@ public class RecommendationRepository {
                 .collect(Collectors.toList());
     }
 
+    public List<Recommendation> findByRenting(Long rentingId) {
+        return repository().recommendations.stream().filter(a -> a.getBookId().equals(rentingId))
+                .collect(Collectors.toList());
+    }
+
     public List<Recommendation> findAll() {
         return repository().recommendations;
     }
@@ -40,8 +45,8 @@ public class RecommendationRepository {
     @Bean
     RecommendationRepository repository() {
         RecommendationRepository repository = new RecommendationRepository();
-        repository.add(new Recommendation(1L, 5, "Książka godna polecenia. Warta swoich pieniędzy", 2L));
-        repository.add(new Recommendation(2L, 2, "Nie warto. Szkoda czasu i pieniedzy" , 2L));
+        repository.add(new Recommendation(1L, 5, "Książka godna polecenia, warta swoich pieniędzy", 2L));
+        repository.add(new Recommendation(2L, 2, "Nie warto, szkoda czasu i pieniedzy" , 2L));
         repository.add(new Recommendation(3L, 4, "Polecam!" , 3L));
         return repository;
     }
