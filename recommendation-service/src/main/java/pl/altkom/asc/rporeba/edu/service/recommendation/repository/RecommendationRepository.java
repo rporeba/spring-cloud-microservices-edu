@@ -28,8 +28,8 @@ public class RecommendationRepository {
             return null;
     }
 
-    public List<Recommendation> findByRecommendation(Long recommendationId) {
-        return repository().recommendations.stream().filter(a -> a.getBookId().equals(recommendationId))
+    public List<Recommendation> findByBook(Long bookId) {
+        return repository().recommendations.stream().filter(a -> a.getBookId().equals(bookId))
                 .collect(Collectors.toList());
     }
 

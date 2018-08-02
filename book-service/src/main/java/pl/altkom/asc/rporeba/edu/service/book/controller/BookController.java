@@ -53,7 +53,7 @@ public class BookController {
     public Book findBookByIdWithRenting(@PathVariable("id") Long id) {
         LOGGER.info("Book find: id={}", id);
         Book book = bookRepository.findById(id);
-        book.setRents(rentingClient.findRentingByBookId(book.getId()));
+        book.setRentings(rentingClient.findRentingByBookId(book.getId()));
         return book;
     }
 

@@ -27,9 +27,9 @@ public class RecommendationController {
     }
 
     @GetMapping("/book/{bookId}")
-    public List<Recommendation> findByRecommendation(@PathVariable("bookId") Long bookId) {
+    public List<Recommendation> findByBook(@PathVariable("bookId") Long bookId) {
         LOGGER.info("Recommendation find: bookId={}", bookId);
-        return recommendationRepository.findByRecommendation(bookId);
+        return recommendationRepository.findByBook(bookId);
     }
 
 }

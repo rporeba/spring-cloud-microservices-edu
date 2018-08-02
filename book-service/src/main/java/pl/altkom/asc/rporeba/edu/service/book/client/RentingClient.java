@@ -3,7 +3,7 @@ package pl.altkom.asc.rporeba.edu.service.book.client;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import pl.altkom.asc.rporeba.edu.service.renting.model.Rent;
+import pl.altkom.asc.rporeba.edu.service.book.model.Renting;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
 public interface RentingClient {
 
     @GetMapping("/book/{bookId}")
-    public List<Rent> findRentingByBookId(@PathVariable("bookId") Long bookId);
+    public List<Renting> findRentingByBookId(@PathVariable("bookId") Long bookId);
 
 //    @GetMapping("/book/{bookId}/with-recommendation")
-//    public List<Rent> findByRecommendationWithRecommendation(@PathVariable("bookId") Long bookId);
+//    public List<Renting> findByRecommendationWithRecommendation(@PathVariable("bookId") Long bookId);
 
 }

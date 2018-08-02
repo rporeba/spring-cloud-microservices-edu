@@ -10,20 +10,15 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Book {
+public class Renting {
 
     private Long id;
-    private String isbn;
-    private String bookTitle;
-    private Long numberOfPage;
+    private String borrowerNameAndSurname;
     private List<Recommendation> recommendations = Lists.newArrayList();
-    private List<Renting> rentings = Lists.newArrayList();
 
-    public Book(Long id, String isbn, String bookTitle, Long numberOfPage) {
+    public Renting(Long id, String borrowerNameAndSurname, List<Recommendation> recommendations) {
         this.id = id;
-        this.isbn = isbn;
-        this.bookTitle = bookTitle;
-        this.numberOfPage = numberOfPage;
+        this.borrowerNameAndSurname = borrowerNameAndSurname;
+        this.recommendations = recommendations;
     }
-
 }
