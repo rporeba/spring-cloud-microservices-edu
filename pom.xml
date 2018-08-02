@@ -16,6 +16,7 @@
         <module>gateway-service</module>
         <module>recommendation-service</module>
         <module>renting-service</module>
+        <module>proxy-service</module>
     </modules>
 
 </project>

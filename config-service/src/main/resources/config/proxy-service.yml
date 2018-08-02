@@ -1,0 +1,23 @@
+server:
+  port: 8093
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8092/eureka/
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+zuul:
+  routes:
+    book:
+      path: /book/**
+      serviceId: book-service
+    renting:
+      path: /renting/**
+      serviceId: renting-service
+    recommendation:
+      path: /recommendation/**
+      serviceId: recommendation-service
