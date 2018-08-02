@@ -67,7 +67,7 @@ public class BookController {
     @PostMapping("/addBook")
     public Book addBook(@RequestBody Book book) {
         LOGGER.info("Book add: {}", book);
-        return bookRepository.add(book);
+        return bookRepository.addBook(book);
     }
 
     @DeleteMapping("/deleteBook/{bookId}")

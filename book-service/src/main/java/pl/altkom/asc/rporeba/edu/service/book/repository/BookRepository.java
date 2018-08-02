@@ -22,7 +22,7 @@ public class BookRepository {
         return books;
     }
 
-    public Book add(Book book) {
+    public Book addBook(Book book) {
         book.setId((long) (books.size()+1));
         books.add(book);
         return book;
