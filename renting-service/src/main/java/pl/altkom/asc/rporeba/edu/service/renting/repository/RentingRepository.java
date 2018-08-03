@@ -17,6 +17,12 @@ public class RentingRepository {
         return rent;
     }
 
+    public Rent giveBookBack(Rent rent) {
+        rent.setId((long) (rents.size()-1));
+        rents.remove(rent);
+        return rent;
+    }
+
     public Rent findById(Long id) {
         Optional<Rent> recommendation = rents.stream().filter(a -> a.getId().equals(id)).findFirst();
         if (recommendation.isPresent())

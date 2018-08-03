@@ -3,9 +3,7 @@ package pl.altkom.asc.rporeba.edu.service.renting.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.altkom.asc.rporeba.edu.service.renting.client.RecommendationClient;
 import pl.altkom.asc.rporeba.edu.service.renting.model.Rent;
 import pl.altkom.asc.rporeba.edu.service.renting.repository.RentingRepository;
@@ -39,4 +37,12 @@ public class RentingController {
         rents.forEach(rent -> rent.setRecommendations(recommendationClient.findRecommendationByRentingId(rent.getId())));
         return rents;
     }
+
+    @PostMapping("/rentBook")
+    public Rent rentBook(@RequestBody Rent rent) {
+        LOGGER.info("Renting created for book: bookId={}", rent.getBookId());
+        rentingRepository.addRenting(rent);
+        return null;
+    }
+
 }
