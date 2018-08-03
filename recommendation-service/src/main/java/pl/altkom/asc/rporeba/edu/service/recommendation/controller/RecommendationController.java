@@ -9,9 +9,6 @@ import pl.altkom.asc.rporeba.edu.service.recommendation.repository.Recommendatio
 
 import java.util.List;
 
-/**
- * @author rporeba
- */
 @RestController
 public class RecommendationController {
 

@@ -7,9 +7,6 @@ import pl.altkom.asc.rporeba.edu.service.book.model.Recommendation;
 
 import java.util.List;
 
-/**
- * @author rporeba
- */
 @FeignClient(name = "recommendation-service")
 public interface RecommendationClient {
 

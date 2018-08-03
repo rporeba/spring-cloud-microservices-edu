@@ -63,7 +63,6 @@ public class BookController {
         return book;
     }
 
-
     @PostMapping("/addBook")
     public Book addBook(@RequestBody Book book) {
         LOGGER.info("Book add: {}", book);

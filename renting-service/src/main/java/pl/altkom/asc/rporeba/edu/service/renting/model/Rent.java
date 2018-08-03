@@ -7,9 +7,6 @@ import lombok.Setter;
 
 import java.util.List;
 
-/**
- * @author rporeba
- */
 @Getter
 @Setter
 @NoArgsConstructor
